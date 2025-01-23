@@ -1,117 +1,98 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
-import Sheet from '@mui/joy/Sheet';
-import List from '@mui/joy/List';
-import ListItem from '@mui/joy/ListItem';
-import ListItemButton from '@mui/joy/ListItemButton';
 
 const Layout = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      {/* Navigation */}
-      <Sheet
-        component="nav"
+      <Box
+        component="header"
         sx={{
           p: 2,
           bgcolor: 'background.surface',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           borderBottom: '1px solid',
           borderColor: 'divider',
         }}
       >
-        <Typography 
-          level="h4" 
-          component={Link} 
-          to="/" 
-          sx={{ 
-            textDecoration: 'none', 
-            color: 'inherit',
-            '&.active': {
-              color: 'primary.500',
-            }
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            maxWidth: 1200,
+            mx: 'auto',
           }}
         >
-          Sokolove Law
-        </Typography>
-        <List orientation="horizontal" sx={{ gap: 2 }}>
-          <ListItem>
-            <ListItemButton 
-              component={Link} 
+          <Typography level="h4" component={NavLink} to="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
+            Sokolove Law
+          </Typography>
+          <Box component="nav" sx={{ display: 'flex', gap: 2 }}>
+            <NavLink
               to="/"
-              sx={{
-                '&.active': {
-                  color: 'primary.500',
-                }
-              }}
+              style={({ isActive }) => ({
+                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
+                textDecoration: 'none',
+              })}
             >
               Home
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton 
-              component={Link} 
-              to="/services"
-              sx={{
-                '&.active': {
-                  color: 'primary.500',
-                }
-              }}
-            >
-              Services
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton 
-              component={Link} 
+            </NavLink>
+            <NavLink
               to="/about"
-              sx={{
-                '&.active': {
-                  color: 'primary.500',
-                }
-              }}
+              style={({ isActive }) => ({
+                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
+                textDecoration: 'none',
+              })}
             >
               About
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton 
-              component={Link} 
+            </NavLink>
+            <NavLink
+              to="/services"
+              style={({ isActive }) => ({
+                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
+                textDecoration: 'none',
+              })}
+            >
+              Services
+            </NavLink>
+            <NavLink
               to="/contact"
-              sx={{
-                '&.active': {
-                  color: 'primary.500',
-                }
-              }}
+              style={({ isActive }) => ({
+                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
+                textDecoration: 'none',
+              })}
             >
               Contact
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </Sheet>
+            </NavLink>
+          </Box>
+        </Box>
+      </Box>
 
-      {/* Main Content */}
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{
+          flex: 1,
+          p: 2,
+          maxWidth: 1200,
+          mx: 'auto',
+          width: '100%',
+        }}
+      >
         <Outlet />
       </Box>
 
-      {/* Footer */}
-      <Sheet
+      <Box
         component="footer"
         sx={{
           p: 2,
           bgcolor: 'background.surface',
           borderTop: '1px solid',
           borderColor: 'divider',
-          textAlign: 'center',
         }}
       >
-        <Typography level="body-sm">
+        <Typography level="body-sm" textAlign="center">
           © {new Date().getFullYear()} Sokolove Law. All rights reserved.
         </Typography>
-      </Sheet>
+      </Box>
     </Box>
   );
 };

@@ -1,11 +1,11 @@
 import { CssVarsProvider } from '@mui/joy/styles';
 import CssBaseline from '@mui/joy/CssBaseline';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from 'react-router-dom';
 import { extendTheme } from '@mui/joy/styles';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Services from './pages/Services';
 import About from './pages/About';
+import Services from './pages/Services';
 import Contact from './pages/Contact';
 
 // Professional legal color palette
@@ -55,20 +55,23 @@ const theme = extendTheme({
   },
 });
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="services" element={<Services />} />
+      <Route path="contact" element={<Contact />} />
+    </Route>
+  ),
+  { basename: '/sokolove' }
+);
+
 function App() {
   return (
     <CssVarsProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="services" element={<Services />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </CssVarsProvider>
   );
 }
