@@ -1,11 +1,15 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
+import Sheet from '@mui/joy/Sheet';
+import List from '@mui/joy/List';
+import ListItem from '@mui/joy/ListItem';
+import ListItemButton from '@mui/joy/ListItemButton';
 
 const Layout = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Box
+      <Sheet
         component="header"
         sx={{
           p: 2,
@@ -26,46 +30,66 @@ const Layout = () => {
           <Typography level="h4" component={NavLink} to="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
             Sokolove Law
           </Typography>
-          <Box component="nav" sx={{ display: 'flex', gap: 2 }}>
-            <NavLink
-              to="/"
-              style={({ isActive }) => ({
-                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
-                textDecoration: 'none',
-              })}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              style={({ isActive }) => ({
-                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
-                textDecoration: 'none',
-              })}
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/services"
-              style={({ isActive }) => ({
-                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
-                textDecoration: 'none',
-              })}
-            >
-              Services
-            </NavLink>
-            <NavLink
-              to="/contact"
-              style={({ isActive }) => ({
-                color: isActive ? 'var(--joy-palette-primary-500)' : 'inherit',
-                textDecoration: 'none',
-              })}
-            >
-              Contact
-            </NavLink>
-          </Box>
+          <List orientation="horizontal" sx={{ display: 'flex', gap: 2 }}>
+            <ListItem>
+              <ListItemButton
+                component={NavLink}
+                to="/"
+                sx={{
+                  fontWeight: 600,
+                  '&.active': {
+                    color: 'primary.500',
+                  }
+                }}
+              >
+                Home
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton
+                component={NavLink}
+                to="/about"
+                sx={{
+                  fontWeight: 600,
+                  '&.active': {
+                    color: 'primary.500',
+                  }
+                }}
+              >
+                About
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton
+                component={NavLink}
+                to="/services"
+                sx={{
+                  fontWeight: 600,
+                  '&.active': {
+                    color: 'primary.500',
+                  }
+                }}
+              >
+                Services
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton
+                component={NavLink}
+                to="/contact"
+                sx={{
+                  fontWeight: 600,
+                  '&.active': {
+                    color: 'primary.500',
+                  }
+                }}
+              >
+                Contact
+              </ListItemButton>
+            </ListItem>
+          </List>
         </Box>
-      </Box>
+      </Sheet>
 
       <Box
         component="main"
@@ -80,7 +104,7 @@ const Layout = () => {
         <Outlet />
       </Box>
 
-      <Box
+      <Sheet
         component="footer"
         sx={{
           p: 2,
@@ -92,7 +116,7 @@ const Layout = () => {
         <Typography level="body-sm" textAlign="center">
           © {new Date().getFullYear()} Sokolove Law. All rights reserved.
         </Typography>
-      </Box>
+      </Sheet>
     </Box>
   );
 };
