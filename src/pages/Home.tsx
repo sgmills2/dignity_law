@@ -15,19 +15,19 @@ const Home = () => {
     {
       name: "Mary Johnson",
       role: "Family Member",
-      content: "Sokolove Law helped us through a difficult time when we discovered negligence at my mother's nursing home. Their compassionate approach and legal expertise made all the difference.",
+      content: "Dignity Law helped us through a difficult time when we discovered negligence at my mother's nursing home. Their compassionate approach and legal expertise made all the difference.",
       image: "https://placehold.co/100x100",
     },
     {
       name: "Robert Williams",
       role: "Client",
-      content: "I cannot thank the team at Sokolove enough for their dedication to my case. They fought for my rights and ensured I received the care and compensation I deserved.",
+      content: "I cannot thank the team at Dignity Law enough for their dedication to my case. They fought for my rights and ensured I received the care and compensation I deserved.",
       image: "https://placehold.co/100x100",
     },
     {
       name: "Patricia Davis",
       role: "Family Member",
-      content: "The attorneys at Sokolove Law were always available to answer our questions and guide us through the legal process. They truly care about their clients' well-being.",
+      content: "The attorneys at Dignity Law were always available to answer our questions and guide us through the legal process. They truly care about their clients' well-being.",
       image: "https://placehold.co/100x100",
     },
   ];

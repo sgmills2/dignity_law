@@ -28,7 +28,7 @@ const Layout = () => {
           }}
         >
           <Typography level="h4" component={NavLink} to="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
-            Sokolove Law
+            Dignity Nursing Home Law
           </Typography>
           <List orientation="horizontal" sx={{ display: 'flex', gap: 2 }}>
             <ListItem>
@@ -114,7 +114,7 @@ const Layout = () => {
         }}
       >
         <Typography level="body-sm" textAlign="center">
-          © {new Date().getFullYear()} Sokolove Law. All rights reserved.
+          © {new Date().getFullYear()} Dignity Nursing Home Law. All rights reserved.
         </Typography>
       </Sheet>
     </Box>

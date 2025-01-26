@@ -62,7 +62,7 @@ const Contact = () => {
                 <EmailIcon />
                 <Box>
                   <Typography level="title-lg">Email</Typography>
-                  <Typography>contact@sokolovelaw.com</Typography>
+                  <Typography>contact@dignitynursinghomelaw.com</Typography>
                 </Box>
               </Box>
 

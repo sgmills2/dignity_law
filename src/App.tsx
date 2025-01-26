@@ -64,7 +64,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
     </Route>
   ),
-  { basename: '/sokolove' }
+  { basename: '/dignity_law' }
 );
 
 function App() {

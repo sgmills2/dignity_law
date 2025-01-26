@@ -9,21 +9,15 @@ import Divider from '@mui/joy/Divider';
 const About = () => {
   const teamMembers = [
     {
-      name: 'James Sokolove',
+      name: 'Billy Joe Mills',
       role: 'Founding Partner',
-      description: 'Over 30 years of experience in elder law and nursing home abuse cases.',
+      description: 'Dedicated advocate for nursing home residents with over 15 years of experience in elder abuse litigation.',
       image: 'https://placehold.co/400x500',
     },
     {
-      name: 'Sarah Johnson',
+      name: 'Micah Heartson',
       role: 'Senior Attorney',
-      description: 'Specializes in elder rights advocacy and nursing home litigation.',
-      image: 'https://placehold.co/400x500',
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Legal Counsel',
-      description: 'Expert in healthcare law and facility compliance regulations.',
+      description: 'Specializes in nursing home negligence cases and elder rights protection, with a focus on facility compliance.',
       image: 'https://placehold.co/400x500',
     },
   ];
@@ -33,7 +27,7 @@ const About = () => {
       {/* Mission Section */}
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography level="h1" sx={{ mb: 2 }}>
-          About Sokolove Law
+          About Dignity Nursing Home Law
         </Typography>
         <Typography level="body-lg" sx={{ maxWidth: '800px', mx: 'auto' }}>
           For over three decades, we've been dedicated to protecting the rights and dignity of elderly care residents.

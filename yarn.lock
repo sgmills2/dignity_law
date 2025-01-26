@@ -3356,9 +3356,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sokolove@workspace:.":
+"dignity_law@workspace:.":
   version: 0.0.0-use.local
-  resolution: "sokolove@workspace:."
+  resolution: "dignity_law@workspace:."
   dependencies:
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
