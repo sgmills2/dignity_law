@@ -16,7 +16,7 @@ const About = () => {
     },
     {
       name: 'Micah Heartson',
-      role: 'Senior Attorney',
+      role: 'Founding Partner',
       description: 'Specializes in nursing home negligence cases and elder rights protection, with a focus on facility compliance.',
       image: 'https://placehold.co/400x500',
     },
