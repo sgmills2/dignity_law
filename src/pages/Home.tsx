@@ -9,6 +9,7 @@ import GavelIcon from '@mui/icons-material/Gavel';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Avatar from '@mui/joy/Avatar';
+import heroImage from '../assets/heroimg.jpg';
 
 const Home = () => {
   const testimonials = [
@@ -33,143 +34,201 @@ const Home = () => {
   ];
 
   return (
-    <Box>
+    <>
       {/* Hero Section */}
       <Box
+        component="section"
         sx={{
-          textAlign: 'center',
-          py: 8,
-          px: 2,
-          bgcolor: 'background.level1',
-          borderRadius: 'lg',
+          height: '80vh',
+          position: 'relative',
+          width: '100vw',
+          left: '50%',
+          right: '50%',
+          marginLeft: '-50vw',
+          marginRight: '-50vw',
           mb: 4,
         }}
       >
-        <Typography level="h1" sx={{ mb: 2 }}>
-          Protecting the Rights of Elderly Care Residents
-        </Typography>
-        <Typography level="body-lg" sx={{ mb: 4, maxWidth: '800px', mx: 'auto' }}>
-          We are dedicated to ensuring the dignity, safety, and well-being of your loved ones in elderly care facilities.
-          Our experienced legal team is here to help when standards of care aren't met.
-        </Typography>
-        <Button
-          component={Link}
-          to="/contact"
-          size="lg"
-          variant="solid"
-          color="primary"
+        <img
+          src={heroImage}
+          alt="Elderly couple by the lake"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7))',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            px: 2,
+          }}
         >
-          Get Free Consultation
-        </Button>
+          <Typography
+            level="h1"
+            sx={{
+              mb: 2,
+              color: 'white',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+              fontSize: { xs: '2rem', md: '3.5rem' },
+              textAlign: 'center',
+              maxWidth: '1200px',
+            }}
+          >
+            Protecting the Rights of Elderly Care Residents
+          </Typography>
+          <Typography
+            level="body-lg"
+            sx={{
+              mb: 4,
+              maxWidth: '800px',
+              mx: 'auto',
+              color: 'white',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
+              textAlign: 'center',
+            }}
+          >
+            We are dedicated to ensuring the dignity, safety, and well-being of your loved ones in elderly care facilities.
+            Our experienced legal team is here to help when standards of care aren't met.
+          </Typography>
+          <Button
+            component={Link}
+            to="/contact"
+            size="lg"
+            variant="solid"
+            sx={{
+              bgcolor: 'white',
+              color: 'primary.600',
+              '&:hover': {
+                bgcolor: 'grey.100',
+              },
+              boxShadow: 'md',
+            }}
+          >
+            Get Free Consultation
+          </Button>
+        </Box>
       </Box>
 
-      {/* Features Section */}
-      <Grid container spacing={3} sx={{ mb: 4 }}>
-        <Grid xs={12} md={4}>
-          <Card variant="outlined" sx={{ height: '100%', textAlign: 'center', p: 3 }}>
-            <ElderlyIcon sx={{ fontSize: 40, mb: 2, color: 'primary.500' }} />
-            <Typography level="h4" sx={{ mb: 2 }}>
-              Elder Care Advocacy
-            </Typography>
-            <Typography>
-              We advocate for proper care, dignity, and respect for elderly residents in care facilities.
-            </Typography>
-          </Card>
+      <Box sx={{ maxWidth: '1200px', mx: 'auto', px: 2 }}>
+        {/* Features Section */}
+        <Grid container spacing={3} sx={{ mb: 4 }}>
+          <Grid xs={12} md={4}>
+            <Card variant="outlined" sx={{ height: '100%', textAlign: 'center', p: 3 }}>
+              <ElderlyIcon sx={{ fontSize: 40, mb: 2, color: 'primary.500' }} />
+              <Typography level="h4" sx={{ mb: 2 }}>
+                Elder Care Advocacy
+              </Typography>
+              <Typography>
+                We advocate for proper care, dignity, and respect for elderly residents in care facilities.
+              </Typography>
+            </Card>
+          </Grid>
+          <Grid xs={12} md={4}>
+            <Card variant="outlined" sx={{ height: '100%', textAlign: 'center', p: 3 }}>
+              <GavelIcon sx={{ fontSize: 40, mb: 2, color: 'primary.500' }} />
+              <Typography level="h4" sx={{ mb: 2 }}>
+                Legal Expertise
+              </Typography>
+              <Typography>
+                Our experienced attorneys specialize in elder law and nursing home abuse cases.
+              </Typography>
+            </Card>
+          </Grid>
+          <Grid xs={12} md={4}>
+            <Card variant="outlined" sx={{ height: '100%', textAlign: 'center', p: 3 }}>
+              <SupportAgentIcon sx={{ fontSize: 40, mb: 2, color: 'primary.500' }} />
+              <Typography level="h4" sx={{ mb: 2 }}>
+                24/7 Support
+              </Typography>
+              <Typography>
+                We're always available to help you and your family through difficult situations.
+              </Typography>
+            </Card>
+          </Grid>
         </Grid>
-        <Grid xs={12} md={4}>
-          <Card variant="outlined" sx={{ height: '100%', textAlign: 'center', p: 3 }}>
-            <GavelIcon sx={{ fontSize: 40, mb: 2, color: 'primary.500' }} />
-            <Typography level="h4" sx={{ mb: 2 }}>
-              Legal Expertise
-            </Typography>
-            <Typography>
-              Our experienced attorneys specialize in elder law and nursing home abuse cases.
-            </Typography>
-          </Card>
-        </Grid>
-        <Grid xs={12} md={4}>
-          <Card variant="outlined" sx={{ height: '100%', textAlign: 'center', p: 3 }}>
-            <SupportAgentIcon sx={{ fontSize: 40, mb: 2, color: 'primary.500' }} />
-            <Typography level="h4" sx={{ mb: 2 }}>
-              24/7 Support
-            </Typography>
-            <Typography>
-              We're always available to help you and your family through difficult situations.
-            </Typography>
-          </Card>
-        </Grid>
-      </Grid>
 
-      {/* Testimonials Section */}
-      <Box sx={{ mb: 6 }}>
-        <Typography level="h2" sx={{ textAlign: 'center', mb: 4 }}>
-          Client Testimonials
-        </Typography>
-        <Grid container spacing={3}>
-          {testimonials.map((testimonial, index) => (
-            <Grid key={index} xs={12} md={4}>
-              <Card
-                variant="soft"
-                sx={{
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  p: 3,
-                }}
-              >
-                <FormatQuoteIcon
+        {/* Testimonials Section */}
+        <Box sx={{ mb: 6 }}>
+          <Typography level="h2" sx={{ textAlign: 'center', mb: 4 }}>
+            Client Testimonials
+          </Typography>
+          <Grid container spacing={3}>
+            {testimonials.map((testimonial, index) => (
+              <Grid key={index} xs={12} md={4}>
+                <Card
+                  variant="soft"
                   sx={{
-                    fontSize: 40,
-                    color: 'primary.300',
-                    mb: 2,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    p: 3,
                   }}
-                />
-                <Typography sx={{ mb: 3, flex: 1 }}>
-                  "{testimonial.content}"
-                </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <Avatar src={testimonial.image} />
-                  <Box>
-                    <Typography level="title-md">
-                      {testimonial.name}
-                    </Typography>
-                    <Typography level="body-sm">
-                      {testimonial.role}
-                    </Typography>
+                >
+                  <FormatQuoteIcon
+                    sx={{
+                      fontSize: 40,
+                      color: 'primary.300',
+                      mb: 2,
+                    }}
+                  />
+                  <Typography sx={{ mb: 3, flex: 1 }}>
+                    "{testimonial.content}"
+                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <Avatar src={testimonial.image} />
+                    <Box>
+                      <Typography level="title-md">
+                        {testimonial.name}
+                      </Typography>
+                      <Typography level="body-sm">
+                        {testimonial.role}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
 
-      {/* Call to Action */}
-      <Box
-        sx={{
-          textAlign: 'center',
-          py: 6,
-          bgcolor: 'background.level1',
-          borderRadius: 'lg',
-        }}
-      >
-        <Typography level="h2" sx={{ mb: 2 }}>
-          Need Legal Assistance?
-        </Typography>
-        <Typography sx={{ mb: 3 }}>
-          Contact us today for a free consultation about your case.
-        </Typography>
-        <Button
-          component={Link}
-          to="/contact"
-          size="lg"
-          variant="solid"
-          color="primary"
+        {/* Call to Action */}
+        <Box
+          sx={{
+            textAlign: 'center',
+            py: 6,
+            bgcolor: 'background.level1',
+            borderRadius: 'lg',
+          }}
         >
-          Contact Us Now
-        </Button>
+          <Typography level="h2" sx={{ mb: 2 }}>
+            Need Legal Assistance?
+          </Typography>
+          <Typography sx={{ mb: 3 }}>
+            Contact us today for a free consultation about your case.
+          </Typography>
+          <Button
+            component={Link}
+            to="/contact"
+            size="lg"
+            variant="solid"
+            color="primary"
+          >
+            Contact Us Now
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 
